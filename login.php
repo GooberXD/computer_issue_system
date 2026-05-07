@@ -2,6 +2,7 @@
 session_start();
 include('connect.php');
 
+// hello system - julius
 if(isset($_POST['login'])){
     $fullname = $_POST['fullname']; 
 
