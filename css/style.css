@@ -1,0 +1,342 @@
+/* ═══════════════════════════════════════
+   CIT-U CCS Issue Reporting System
+   Shared Stylesheet
+═══════════════════════════════════════ */
+ 
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500&display=swap'); */
+ 
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    background: #f7f3ee;
+}
+ 
+/* ══════════════════════════════════════
+   LEFT PANEL  (shared by login & register)
+══════════════════════════════════════ */
+.panel-left {
+    width: 35%;
+    background: #6B1A1A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    gap: 0.6rem;
+}
+ 
+.logo-ring {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(212, 140, 60, 0.15);
+    border: 2px solid rgba(212, 140, 60, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+ 
+.logo-inner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(212, 140, 60, 0.2);
+    border: 1.5px solid rgba(212, 140, 60, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    overflow: hidden;
+}
+ 
+.logo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+ 
+.panel-tagline {
+    color: #D48C3C;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+ 
+.panel-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.55rem;
+    text-align: center;
+    line-height: 1.3;
+}
+ 
+.divider {
+    width: 40px;
+    height: 1px;
+    background: #D48C3C;
+    margin: 0.8rem 0;
+}
+ 
+.panel-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+ 
+.panel-desc {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 220px;
+    margin-top: 0.3rem;
+}
+ 
+/* ══════════════════════════════════════
+   RIGHT PANEL
+══════════════════════════════════════ */
+.panel-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    overflow-y: auto;
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION BAR
+══════════════════════════════════════ */
+.navbar {
+    background: #6B1A1A;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+ 
+.navbar-brand {
+    color: #D48C3C;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+ 
+.navbar-links {
+    display: flex;
+    gap: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+ 
+.navbar-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13.5px;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+ 
+.navbar-links a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+ 
+.navbar-links a.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+ 
+.navbar-user {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+}
+ 
+.navbar-user span {
+    color: #fff;
+    font-weight: 500;
+}
+ 
+/* ══════════════════════════════════════
+   CARD
+══════════════════════════════════════ */
+.card {
+    width: 100%;
+    max-width: 420px;
+}
+ 
+.gold-strip {
+    height: 4px;
+    background: #D48C3C;
+    border-radius: 10px 10px 0 0;
+}
+ 
+.card-body {
+    background: #fff;
+    border: 1.5px solid #e0d4c4;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 2.2rem 2rem 2rem;
+}
+ 
+.card-header {
+    margin-bottom: 1.8rem;
+}
+ 
+.card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #1a0a0a;
+    margin-bottom: 0.4rem;
+}
+ 
+.card-header p {
+    color: #7a6a5a;
+    font-size: 13.5px;
+}
+ 
+/* ══════════════════════════════════════
+   FORM ELEMENTS
+══════════════════════════════════════ */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+ 
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #5a4a3a;
+    margin-bottom: 0.5rem;
+}
+ 
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #d4c4b0;
+    border-radius: 8px;
+    background: #faf8f5;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #1a0a0a;
+    outline: none;
+    transition: border-color 0.2s;
+}
+ 
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #6B1A1A;
+    background: #fff;
+}
+ 
+.form-group input[type="text"]::placeholder,
+.form-group textarea::placeholder {
+    color: #b0a090;
+}
+ 
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a4a3a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    cursor: pointer;
+}
+ 
+/* Extra fields shown/hidden by JS */
+.extra-field {
+    display: none;
+}
+ 
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+.btn-primary {
+    width: 100%;
+    padding: 0.85rem;
+    background: #6B1A1A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.3rem;
+}
+ 
+.btn-primary:hover { background: #8B2A2A; }
+.btn-primary:active { background: #5a1515; }
+ 
+/* ══════════════════════════════════════
+   ALERTS
+══════════════════════════════════════ */
+.alert {
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-size: 13px;
+    margin-bottom: 1.3rem;
+}
+ 
+.alert-error {
+    background: #fdecea;
+    border: 1px solid #f5c0bc;
+    color: #8B2A2A;
+}
+ 
+.alert-success {
+    background: #edf7ed;
+    border: 1px solid #b2d9b2;
+    color: #2e6b2e;
+}
+ 
+/* ══════════════════════════════════════
+   FOOTER LINK
+══════════════════════════════════════ */
+.card-footer {
+    margin-top: 1.8rem;
+    text-align: center;
+    font-size: 13px;
+    color: #7a6a5a;
+}
+ 
+.card-footer a {
+    color: #6B1A1A;
+    text-decoration: none;
+    font-weight: 500;
+}
+ 
+.card-footer a:hover {
+    text-decoration: underline;
+}
+ 
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 700px) {
+    body { flex-direction: column; }
+    .panel-left { width: 100%; padding: 2.5rem 1.5rem; }
+    .panel-right { padding: 2rem 1.2rem; }
+}
