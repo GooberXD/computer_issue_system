@@ -333,6 +333,166 @@ body {
 }
  
 /* ══════════════════════════════════════
+   STATUS BADGES
+══════════════════════════════════════ */
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.status-resolved {
+    background: #edf7ed;
+    color: #2e6b2e;
+    border: 1px solid #b2d9b2;
+}
+
+.status-pending {
+    background: #fffaed;
+    color: #8B6B00;
+    border: 1px solid #f5d9a8;
+}
+
+.status-unresolved {
+    background: #fdecea;
+    color: #8B2A2A;
+    border: 1px solid #f5c0bc;
+}
+
+.status-badge-clickable {
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.status-badge-clickable:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ══════════════════════════════════════
+   STATUS UPDATE MODAL
+══════════════════════════════════════ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-dialog {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border: 1.5px solid #e0d4c4;
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1.5px solid #e0d4c4;
+    padding-bottom: 1rem;
+}
+
+.modal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #1a0a0a;
+    margin: 0;
+}
+
+.modal-body {
+    margin-bottom: 1.5rem;
+}
+
+.modal-body label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #5a4a3a;
+    margin-bottom: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.radio-option input[type="radio"] {
+    cursor: pointer;
+    accent-color: #6B1A1A;
+}
+
+.radio-option label {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+}
+
+.btn-modal {
+    padding: 0.6rem 1.2rem;
+    border: 1.5px solid #d4c4b0;
+    border-radius: 8px;
+    background: #faf8f5;
+    color: #1a0a0a;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-modal:hover {
+    border-color: #6B1A1A;
+    background: #fff;
+}
+
+.btn-modal.btn-save {
+    background: #6B1A1A;
+    color: #fff;
+    border-color: #6B1A1A;
+}
+
+.btn-modal.btn-save:hover {
+    background: #8B2A2A;
+    border-color: #8B2A2A;
+}
+
+/* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 700px) {
