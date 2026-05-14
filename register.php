@@ -27,7 +27,7 @@ if(isset($_POST['register'])){
             $conn->query("INSERT INTO Admin (admin_ID, admin_isActive, admin_Position) VALUES ('$last_id', 1, '$pos')");
         }
         
-        echo "<p style='color:green;'>Registration successful! <a href='login.php'>Click here to Login</a></p>";
+        echo "<script>alert('Registration successful! Click OK to proceed to login.'); window.location.href='login.php';</script>";
     } else {
         echo "Error: " . $conn->error;
     }

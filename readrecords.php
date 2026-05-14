@@ -146,6 +146,11 @@ $results = $conn->query($query);
             border-radius: 6px;
             display: inline-block;
         }
+
+        /* ── Status badge colors ── */
+        .status-resolved   { background: #edf7ed; color: #2e6b2e; border: 1px solid #b2d9b2; }
+        .status-pending    { background: #fffaed; color: #8B6B00; border: 1px solid #f5d9a8; }
+        .status-unresolved { background: #fdecea; color: #8B2A2A; border: 1px solid #f5c0bc; }
     </style>
 </head>
 <body>
@@ -156,6 +161,9 @@ $results = $conn->query($query);
         <div class="navbar-links">
             <a href="dashboard.php">Home</a>
             <a href="readrecords.php" class="active">View Reports</a>
+            <?php if($_SESSION['isAdmin'] == 1): ?>
+            <a href="admin_record.php">Admin Panel</a>
+            <?php endif; ?>
             <a href="logout.php">Logout</a>
         </div>
         <p class="navbar-user">Logged in as <span><?php echo $_SESSION['user_name']; ?></span></p>
@@ -182,6 +190,7 @@ $results = $conn->query($query);
                         <th>PC Info</th>
                         <th>Problem Description</th>
                         <th>Reported By</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -194,11 +203,25 @@ $results = $conn->query($query);
                             <td><?php echo $row['issueRpt_computerID']; ?></td>
                             <td><?php echo $row['issueRpt_problemDescription']; ?></td>
                             <td><?php echo $row['user_FullName']; ?></td>
+                            <td>
+                                <?php
+                                    $status = $row['issueRpt_status'];
+                                    $status_class = '';
+                                    if ($status == 'Resolved') {
+                                        $status_class = 'status-resolved';
+                                    } elseif ($status == 'Pending') {
+                                        $status_class = 'status-pending';
+                                    } elseif ($status == 'Unresolved') {
+                                        $status_class = 'status-unresolved';
+                                    }
+                                ?>
+                                <span class="status-badge <?php echo $status_class; ?>"><?php echo $status; ?></span>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
                         <tr class="empty-row">
-                            <td colspan="6">No reports found in the system.</td>
+                            <td colspan="7">No reports found in the system.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -209,4 +232,3 @@ $results = $conn->query($query);
  
 </body>
 </html>
- 

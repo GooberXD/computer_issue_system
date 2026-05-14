@@ -16,7 +16,7 @@ if(isset($_POST['login'])){
         
         header("Location: dashboard.php");
     } else {
-        echo "<p style='color:red;'>User not found. Please register first.</p>";
+        echo "<script>alert('User not found. Please register first.')</script>";
     }
 }
 ?>
@@ -35,8 +35,7 @@ if(isset($_POST['login'])){
     <div class="panel-left">
         <div class="logo-ring">
             <div class="logo-inner">
-                <!-- Replace with: <img src="assets/cit_logo.png" alt="CIT-U Logo"> -->
-                🎓
+                <img src="images/Cebu_Institute_of_Technology_University_Logo.png" alt="CIT-U Logo">
             </div>
         </div>
         <p class="panel-tagline">CIT University</p>
