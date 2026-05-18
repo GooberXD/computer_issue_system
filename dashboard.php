@@ -70,7 +70,6 @@ $rooms_result = $conn->query("SELECT room_Number FROM Room");
         <p class="navbar-user">Logged in as <span><?php echo $_SESSION['user_name']; ?></span></p>
     </nav>
  
-    <!-- Main content -->
     <div class="page-content">
         <div class="card">
             <div class="gold-strip"></div>
@@ -83,7 +82,7 @@ $rooms_result = $conn->query("SELECT room_Number FROM Room");
  
                 <form action="readrecords.php" method="POST">
  
-                    <!-- Room -->
+                    <!-- Room selection -->
                     <div class="form-group">
                         <label for="room">Room</label>
                         <select name="room" id="room" required>
@@ -96,13 +95,13 @@ $rooms_result = $conn->query("SELECT room_Number FROM Room");
                         </select>
                     </div>
  
-                    <!-- Computer ID -->
+                    <!-- Computer ID input -->
                     <div class="form-group">
                         <label for="comp_id">Computer Number / Name</label>
                         <input type="text" id="comp_id" name="comp_id" placeholder="e.g. PC-05 or Desk 2">
                     </div>
  
-                    <!-- Problem Description -->
+                    <!-- Problem Description input-->
                     <div class="form-group">
                         <label for="desc">Problem Description</label>
                         <textarea id="desc" name="desc" placeholder="Describe the problem..." required></textarea>

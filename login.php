@@ -31,7 +31,6 @@ if(isset($_POST['login'])){
 </head>
 <body>
  
-    <!-- Left branding panel -->
     <div class="panel-left">
         <div class="logo-ring">
             <div class="logo-inner">
@@ -45,7 +44,6 @@ if(isset($_POST['login'])){
         <p class="panel-desc">Track and manage computer lab issues across all rooms and departments.</p>
     </div>
  
-    <!-- Right login panel -->
     <div class="panel-right">
         <div class="card">
             <div class="gold-strip"></div>

@@ -26,8 +26,8 @@ if(isset($_POST['register'])){
             $pos = $_POST['position'];
             $conn->query("INSERT INTO Admin (admin_ID, admin_isActive, admin_Position) VALUES ('$last_id', 1, '$pos')");
         }
-        
-        echo "<script>alert('Registration successful! Click OK to proceed to login.'); window.location.href='login.php';</script>";
+         
+        $success = "Registration successful! Click Sign in here to proceed to login.";
     } else {
         echo "Error: " . $conn->error;
     }
@@ -42,7 +42,7 @@ if(isset($_POST['register'])){
     <title>CIT-U CCS | Register</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* ── Role selector tabs ── */
+       
         .role-tabs {
             display: flex;
             gap: 0.5rem;
@@ -75,7 +75,7 @@ if(isset($_POST['register'])){
             font-weight: 500;
         }
  
-        /* hidden real select — driven by tabs via JS */
+        
         #role { display: none; }
     </style>
 </head>
@@ -107,11 +107,11 @@ if(isset($_POST['register'])){
                 </div>
  
                 <?php if(!empty($error)): ?>
-                    <div class="alert alert-error">⚠️ <?php echo htmlspecialchars($error); ?></div>
+                    <div class="alert alert-error"> <?php echo htmlspecialchars($error); ?></div>
                 <?php endif; ?>
  
                 <?php if(!empty($success)): ?>
-                    <div class="alert alert-success">✅ <?php echo htmlspecialchars($success); ?></div>
+                    <div class="alert alert-success"> <?php echo htmlspecialchars($success); ?></div>
                 <?php endif; ?>
  
                 <form method="POST">

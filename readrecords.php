@@ -155,7 +155,7 @@ $results = $conn->query($query);
 </head>
 <body>
  
-    <!-- Navbar -->
+    <!-- Navbar system-->
     <nav class="navbar">
         <p class="navbar-brand">CIT-U &nbsp;|&nbsp; Issue Reporting System</p>
         <div class="navbar-links">
@@ -169,7 +169,6 @@ $results = $conn->query($query);
         <p class="navbar-user">Logged in as <span><?php echo $_SESSION['user_name']; ?></span></p>
     </nav>
  
-    <!-- Main content -->
     <div class="page-content">
  
         <h2 class="page-title">Issue Reports</h2>

@@ -14,7 +14,7 @@ if(isset($_POST['delete_report'])){
     exit();
 }
 
-// Handle status update (merged from update_status.php)
+// Handle status update 
 if(isset($_POST['update_status'])){
     $id = intval($_POST['issue_id']);
     $new_status = $_POST['new_status'];
@@ -23,7 +23,8 @@ if(isset($_POST['update_status'])){
     if($id && in_array($new_status, $allowed_statuses)){
         $conn->query("UPDATE Issue_Report SET issueRpt_Status = '$new_status' WHERE issueRpt_ID = '$id'");
         echo json_encode(['success' => true, 'message' => 'Status updated successfully', 'new_status' => $new_status]);
-    } else {
+    } 
+    else {
         echo json_encode(['success' => false, 'message' => 'Invalid input']);
     }
     exit();
