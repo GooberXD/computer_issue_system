@@ -81,12 +81,11 @@ if(isset($_POST['register'])){
 </head>
 <body>
  
-    <!-- Left branding panel -->
+    
     <div class="panel-left">
         <div class="logo-ring">
             <div class="logo-inner">
-                <!-- Replace with: <img src="assets/cit_logo.png" alt="CIT-U Logo"> -->
-                🎓
+                <img src="images/Cebu_Institute_of_Technology_University_Logo.png" alt="CIT-U Logo">
             </div>
         </div>
         <p class="panel-tagline">CIT University</p>
@@ -96,7 +95,7 @@ if(isset($_POST['register'])){
         <p class="panel-desc">Create your account to start reporting computer lab issues.</p>
     </div>
  
-    <!-- Right register panel -->
+    
     <div class="panel-right">
         <div class="card">
             <div class="gold-strip"></div>
